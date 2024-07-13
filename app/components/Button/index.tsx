@@ -1,7 +1,6 @@
-// app/page.tsx
 "use client";
-import { Button as RowButton } from "@chakra-ui/react";
+import { Button as RowButton, ButtonProps } from "@chakra-ui/react";
 
-export const Button: React.FC = () => {
-  return <RowButton>About</RowButton>;
+export const Button: React.FC<ButtonProps> = (props) => {
+  return <RowButton {...props} />;
 };
