@@ -37,6 +37,7 @@
     "eslint-config-next": "14.2.5",
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^8.2.2",
+    "storybook-addon-pseudo-states": "^3.1.1",
     "typescript": "^5"
   },
   "volta": {
