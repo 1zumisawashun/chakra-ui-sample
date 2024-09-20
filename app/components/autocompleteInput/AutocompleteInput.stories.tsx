@@ -32,7 +32,7 @@ const Render: React.FC = () => {
 
   return (
     <Box>
-      <Box as="p">{watch("text") ? watch("text") : "-----"}</Box>
+      <Box as="p">Preview: {watch("text") ? watch("text") : "-----"}</Box>
       <Controller
         control={control}
         name="text"
