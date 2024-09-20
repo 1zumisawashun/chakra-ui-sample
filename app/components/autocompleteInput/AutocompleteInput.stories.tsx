@@ -18,24 +18,32 @@ const schema = z.object({
 });
 
 const Render: React.FC = () => {
-  const { control, watch } = useForm({
+  const {
+    control,
+    watch,
+    formState: { dirtyFields },
+  } = useForm({
     mode: "onTouched",
     resolver: zodResolver(schema),
     defaultValues: {
-      text: "",
+      text: "JavaScript",
     },
   });
 
   return (
     <Box>
+      <Box as="p">{watch("text") ? watch("text") : "-----"}</Box>
       <Controller
         control={control}
         name="text"
         render={({ field: { onChange, ...rest } }) => (
-          <AutocompleteInput onChange={onChange} {...rest} />
+          <AutocompleteInput
+            onChange={onChange}
+            isDirty={dirtyFields.text}
+            {...rest}
+          />
         )}
       />
-      <Box as="p">{watch("text")}</Box>
     </Box>
   );
 };
